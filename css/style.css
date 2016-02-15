@@ -1046,7 +1046,51 @@ body {
 }
 /* Right sidebar */
 /* START: MAKE SIDEBAR SWITCHABLE */
+@media (max-width: 767px){
+    .conteudo .centerContent .content-left {
+        width: 950px;
+    }
+    .conteudo .centerContent .sidebar {
+        position: absolute;
+        right: 10px;
+        width: 20px;
+        background-color: #E7E7E7;
+        border-radius: 3px;
+        padding-top: 12px;
+        padding-left: 4px;
+    }
 
+    .sidebar:before {
+        display: inline-block;
+        content: "<|EXPAND<|";
+        word-break: break-all;
+        font-weight: bold;
+    }
+
+    .sidebar > div {
+        display: none;
+    }
+
+    .conteudo .centerContent .sidebar:hover {
+        background-color: transparent;
+        height: 710px;
+        width: 307px;
+    }
+
+    .sidebar:hover:before {
+        content: "";
+    }
+
+    .sidebar:hover > div{
+        position: relative;
+        display: block;
+        width: 307px;
+
+    }
+}
+
+
+/* FIRST VERSION THAT REQUIRES DIVS TO BE MOVED
 .conteudo .centerContent .sidebar {
     min-width: 20px;
     max-width: 307px;
@@ -1124,4 +1168,5 @@ body {
 .sidebar span a:active{
     display: none;
 }
+*/
 /* END: MAKE SIDEBAR SWITCHABLE */
